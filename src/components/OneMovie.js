@@ -5,9 +5,7 @@ export default class OneMovie extends Component {
 
     componentDidMount() {
         fetch("http://localhost:4000/v1/movie/" + this.props.match.params.id)
-        //.then((response) => response.json())
         .then((response) => {
-            console.log('States code is', response.status)
             if (response.status !== "200") {
                 let err = Error;
                 err.message = "Invalid response code: " + response.status

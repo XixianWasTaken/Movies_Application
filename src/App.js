@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom"
 import { useRouteMatch } from "react-router-dom"
 import OneMovie from "./components/OneMovie"
 import Genres from "./components/Genres"
+import OneGenre from "./components/OneGenre"
 
 export default function App() {
   return (
@@ -52,11 +53,13 @@ export default function App() {
               <Route path='/movies'>
                 <Movies />
               </Route>
+
+              <Route path='/genre/:id' component={OneGenre} />
               <Route exact path='/genres'>
                 <Genres />
               </Route>
 
-
+            
               <Route path='/admin'>
                 <Admin />
               </Route>
